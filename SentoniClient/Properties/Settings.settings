@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SentoniClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HeartbeatTimer" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="EquityManagerPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\Gargoyle Strategic Investments\EquityManagerClient</Value>
+    </Setting>
+    <Setting Name="TradeEntryPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\Gargoyle Strategic Investments\TradeEntryClient</Value>
+    </Setting>
+    <Setting Name="ReportsPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\Gargoyle Strategic Investments\GargoyleReportsClient</Value>
+    </Setting>
+    <Setting Name="BloombergHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">garbloom.gsi.com</Value>
+    </Setting>
+    <Setting Name="IBHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">gargoyle-mw20.gsi.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

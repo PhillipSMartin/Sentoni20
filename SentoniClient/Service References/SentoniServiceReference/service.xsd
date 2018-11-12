@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SentoniServiceLib" />
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAccountListResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountSummaries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="acctName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bPositionsForAllAccounts" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioSnapshot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="snapshotId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlotter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="acctName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tradeDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTradingSchedule">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TakeSnapshot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="acctName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SwitchQuoteFeed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hostName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostAccountSummaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SentoniServiceLib" minOccurs="0" name="accountSummaries" nillable="true" type="q2:ArrayOfAccountSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostPortfolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SentoniServiceLib" minOccurs="0" name="portfolio" nillable="true" type="q3:Portfolio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostBlotter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SentoniServiceLib" minOccurs="0" name="blotter" nillable="true" type="q4:Blotter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostTradingSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SentoniServiceLib" minOccurs="0" name="tradingSchedule" nillable="true" type="q5:ArrayOfTradingSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

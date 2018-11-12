@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SentoniServiceLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SentoniServiceLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfAccountSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountSummary" nillable="true" type="tns:AccountSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountSummary" nillable="true" type="tns:ArrayOfAccountSummary" />
+  <xs:complexType name="AccountSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Benchmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenchmarkReturn" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BenchmarkReturnMTD" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FuturesPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="GrossReturnMTD" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="MinDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="NetReturnMTD" type="xs:double" />
+      <xs:element minOccurs="0" name="NextTradeTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="OptionPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="PutsOutOfBounds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PutsToTrade" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnOnEquity" type="xs:double" />
+      <xs:element minOccurs="0" name="StockPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="TargetDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="TargetReturn" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalDeltaPct" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="TradingComplete" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountSummary" nillable="true" type="tns:AccountSummary" />
+  <xs:complexType name="Portfolio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountData" nillable="true" type="tns:AccountData" />
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Benchmark" nillable="true" type="tns:Index" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Indices" nillable="true" type="tns:ArrayOfIndex" />
+      <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfPosition" />
+      <xs:element minOccurs="0" name="QuoteServiceHost" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuoteServiceStoppedTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="SnapshotType" type="tns:SnapshotType" />
+      <xs:element minOccurs="0" name="Snapshots" nillable="true" type="tns:ArrayOfSnapshot" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UnsubscribedSymbols" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Portfolio" nillable="true" type="tns:Portfolio" />
+  <xs:complexType name="AccountData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvailableCash" type="xs:double" />
+      <xs:element minOccurs="0" name="BaseCash" type="xs:double" />
+      <xs:element minOccurs="0" name="BaseDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BaseEquity" type="xs:double" />
+      <xs:element minOccurs="0" name="Benchmark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentCash" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentEquity" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentLeverage" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentMarketValue" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentOLAPMarketValue" type="xs:double" />
+      <xs:element minOccurs="0" name="DeltaGoal" type="xs:double" />
+      <xs:element minOccurs="0" name="DeltaPctTraded" type="xs:double" />
+      <xs:element minOccurs="0" name="DollarDeltasTraded" type="xs:double" />
+      <xs:element minOccurs="0" name="EquityType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuturesPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="InflowsSinceBaseDate" type="xs:double" />
+      <xs:element minOccurs="0" name="IsTest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Leverage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="MaximumCaks" type="xs:double" />
+      <xs:element minOccurs="0" name="MinDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="NextTradeTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="OptionPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="PandLSinceBaseDate" type="xs:double" />
+      <xs:element minOccurs="0" name="PortfolioPercentage" type="xs:double" />
+      <xs:element minOccurs="0" name="PutsOutOfBounds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PutsOutOfMoneyThreshold" type="xs:double" />
+      <xs:element minOccurs="0" name="PutsPctTarget" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PutsTraded" type="xs:int" />
+      <xs:element minOccurs="0" name="StartOfDayEquity" type="xs:double" />
+      <xs:element minOccurs="0" name="StartOfDayMarketValue" type="xs:double" />
+      <xs:element minOccurs="0" name="StockPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="TargetDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="TodaysInflows" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalPandL" type="xs:double" />
+      <xs:element minOccurs="0" name="TradingComplete" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountData" nillable="true" type="tns:AccountData" />
+  <xs:complexType name="Index">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caks" type="xs:double" />
+      <xs:element minOccurs="0" name="CallDeltaPct" type="xs:double" />
+      <xs:element minOccurs="0" name="DeltasToTrade" type="xs:double" />
+      <xs:element minOccurs="0" name="FaceValuePutsPct" type="xs:double" />
+      <xs:element minOccurs="0" name="GammaPct" type="xs:double" />
+      <xs:element minOccurs="0" name="LastPrice" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Open" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrevClose" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PutDeltaPct" type="xs:double" />
+      <xs:element minOccurs="0" name="PutsToRebalance" type="xs:int" />
+      <xs:element minOccurs="0" name="PutsToTrade" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortPct" type="xs:double" />
+      <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetValue" type="xs:double" />
+      <xs:element minOccurs="0" name="ThetaAnnualized" type="xs:double" />
+      <xs:element minOccurs="0" name="TimePremium" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalDeltaPct" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdateTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="Weight" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Index" nillable="true" type="tns:Index" />
+  <xs:complexType name="ArrayOfIndex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Index" nillable="true" type="tns:Index" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndex" nillable="true" type="tns:ArrayOfIndex" />
+  <xs:complexType name="ArrayOfPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Position" nillable="true" type="tns:Position" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPosition" nillable="true" type="tns:ArrayOfPosition" />
+  <xs:complexType name="Position">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ask" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Bid" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ChangeInCost" type="xs:double" />
+      <xs:element minOccurs="0" name="ChangeInPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="Closed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClosingPrice" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentCost" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentMarketValue" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="Delta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DeltaUSD" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gamma" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="GammaUSD" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ImpliedVol" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IsFuture" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOption" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOutOfBounds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastPrice" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Mid" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Multiplier" type="xs:short" />
+      <xs:element minOccurs="0" name="NettingAdjustment" type="xs:int" />
+      <xs:element minOccurs="0" name="Open" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="OptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PandL" type="xs:double" />
+      <xs:element minOccurs="0" name="PrevClose" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="SODMarketValue" type="xs:double" />
+      <xs:element minOccurs="0" name="SODPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="SODPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="StrikePrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubscriptionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Theta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ThetaAnnualized" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TimePremium" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="UnderlyingSymbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="Vega" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="_100DeltaUSD" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Position" nillable="true" type="tns:Position" />
+  <xs:simpleType name="SnapshotType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Current" />
+      <xs:enumeration value="StartOfTrading" />
+      <xs:enumeration value="EndOfTrading" />
+      <xs:enumeration value="EndOfDay" />
+      <xs:enumeration value="User" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SnapshotType" nillable="true" type="tns:SnapshotType" />
+  <xs:complexType name="ArrayOfSnapshot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Snapshot" nillable="true" type="tns:Snapshot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSnapshot" nillable="true" type="tns:ArrayOfSnapshot" />
+  <xs:complexType name="Snapshot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SnapshotId" type="xs:int" />
+      <xs:element minOccurs="0" name="SnapshotType" type="tns:SnapshotType" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Snapshot" nillable="true" type="tns:Snapshot" />
+  <xs:complexType name="Blotter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Trades" nillable="true" type="tns:ArrayOfTrade" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Blotter" nillable="true" type="tns:Blotter" />
+  <xs:complexType name="ArrayOfTrade">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Trade" nillable="true" type="tns:Trade" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrade" nillable="true" type="tns:ArrayOfTrade" />
+  <xs:complexType name="Trade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cost" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentMarketPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsFuture" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOption" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Multiplier" type="xs:short" />
+      <xs:element minOccurs="0" name="OptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PandL" type="xs:double" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StrikePrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TradeId" type="xs:int" />
+      <xs:element minOccurs="0" name="TradeSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnderlyingSymbol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Trade" nillable="true" type="tns:Trade" />
+  <xs:complexType name="ArrayOfTradingSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TradingSchedule" nillable="true" type="tns:TradingSchedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTradingSchedule" nillable="true" type="tns:ArrayOfTradingSchedule" />
+  <xs:complexType name="TradingSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndOfDaySnapshotTaken" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndOfTradingSnapshotTaken" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndTradeTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="MinutesToTrade" type="xs:int" />
+      <xs:element minOccurs="0" name="NextTradeTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="StartOfTradingSnapshotTaken" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradingSchedule" nillable="true" type="tns:TradingSchedule" />
+</xs:schema>
